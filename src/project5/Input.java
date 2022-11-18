@@ -9,5 +9,8 @@ public class Input {
         if (args.length > 0) {
             inputFile = args[0];
         }
+        
+        FileHandler handler = new FileHandler();
+        LinkedList list = handler.readFile(inputFile);
     }
 }
