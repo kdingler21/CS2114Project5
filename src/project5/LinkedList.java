@@ -25,13 +25,26 @@ public class LinkedList {
         return this.size;
     }
 
+    public Influencer findName(String name) {
+        Influencer current = this.firstNode;
+        int count = 0;
+        while (current != null && count < this.size) {
+            if (current.getChannelName() == name) {
+                return current;
+            }
+            
+            count++;
+            current = current.getNext();
+        }
+        return null;
+    }
     
     public void add(Influencer added) {
         if (this.firstNode != null) {
             Influencer current = this.firstNode;
             int count = 0;
-            while (current != null && count < size) {
-                if (current.getNext() == null && count == size - 1) {
+            while (current != null && count < this.size) {
+                if (current.getNext() == null && count == this.size - 1) {
                     current.setNext(added);
                 }
 
@@ -43,7 +56,7 @@ public class LinkedList {
         else {
             this.firstNode.setNext(added);
         }
-        size++;
+        this.size++;
     }
 
 
@@ -68,7 +81,7 @@ public class LinkedList {
             node = this.firstNode;
             this.firstNode = null;
         }
-        size--;
+        this.size--;
         return node;
     }
 }
