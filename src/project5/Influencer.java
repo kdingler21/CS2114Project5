@@ -31,6 +31,14 @@ public class Influencer {
     public Influencer getNext() {
         return nextNode;
     }
+    
+    public double getTotalEngagement() {
+        return (this.comments + this.likes);
+    }
+    
+    public double getEngagementRate() {
+        return ((this.getTotalEngagement() / this.followers) * 0.1);
+    }
 
 
     /**
