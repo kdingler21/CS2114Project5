@@ -34,7 +34,7 @@ public class Sorter {
 
             count++;
             current = current.getNext();
-        }
+        } 
         return sorted;
     }
 
@@ -46,17 +46,59 @@ public class Sorter {
      *         sorted list
      */
     public LinkedList sortByChannelName(LinkedList list) {
+        Influencer[] arr = list.toArray();
+        
+        
+        
         return null;
     }
 
 
     /**
-     * sorts list by engagement rate
-     * 
+     * sorts list by traditional engagement rate
+     * @param list
+     *            
      * @return LinkedList
      *         sorted list
      */
-    public LinkedList sortByEngagementRate(LinkedList list) {
-        return null;
+    public Influencer[] sortByTraditioanlEngagementRate(LinkedList list) {
+        Influencer[] arr = list.toArray();
+        int size = arr.length;
+        
+        for(int i = 1; i < size; i++) {
+            Influencer key = arr[i];
+            int j = i - 1;
+            
+            while(j >= 0 && arr[j].getTraditionalEngagementRate() > key.getTraditionalEngagementRate()) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+   
+        return arr;
+    }
+    
+    /**
+     * sorts list by reach engagement rate
+     * @param list
+     * @return
+     */
+    public Influencer[] sortByReachEngagementRate(LinkedList list) {
+        Influencer[] arr = list.toArray();
+        int size = arr.length;
+        
+        for(int i = 1; i < size; i++) {
+            Influencer key = arr[i];
+            int j = i - 1;
+            
+            while(j >= 0 && arr[j].getTraditionalEngagementRate() > key.getTraditionalEngagementRate()) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+   
+        return arr;
     }
 }
