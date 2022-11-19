@@ -21,9 +21,10 @@ public class Input {
         LinkedList sorted = sorter.sortChannels(list);
         
         LinkedList sortedAlphabet = sorter.sortByChannelName(sorted);
-        LinkedList sortedEngagement = sorter.sortByEngagementRate(sorted);
+        Influencer[] sortedEngagement = sorter.sortByReachEngagementRate(sorted);
         
-         while (sortedAlphabet.getFirstNode() != null && sortedAlphabet.next() != null)
+
+        while (sortedAlphabet.getFirstNode() != null && sortedAlphabet.next() != null)
         {
             Influencer curr = sortedAlphabet.getFirstNode(); 
             System.out.println(curr.getChannelName());

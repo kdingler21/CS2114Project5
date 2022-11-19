@@ -2,10 +2,12 @@ package project5;
 
 public class LinkedList {
     private Influencer firstNode;
+    private Influencer nextNode;
     private int size;
 
     public LinkedList() {
         this.firstNode = null;
+        this.nextNode = null;
         this.size = 0;
     }
 
@@ -19,12 +21,37 @@ public class LinkedList {
     public Influencer getFirstNode() {
         return this.firstNode;
     }
+    /**
+     * Sets the node after this node
+     *
+     * @param n
+     *            the node after this one
+     */
+    public void setNext(Influencer n) {
+        nextNode = n;
+    }
 
-    
+    /**
+     * Gets the next node
+     *
+     * @return the next node
+     */
+    public Influencer next() {
+        return nextNode;
+    }
+
+    /**
+     * gets size 
+     * @return the size of the list 
+     */
     public int getSize() {
         return this.size;
     }
-
+    /**
+     * finds the influencer w the given name 
+     * @param name being found
+     * @return infleuncer with that name 
+     */
     public Influencer findName(String name) {
         Influencer current = this.firstNode;
         int count = 0;
@@ -38,7 +65,10 @@ public class LinkedList {
         }
         return null;
     }
-    
+    /**
+     * adds infleuncer 
+     * @param added infleuncer wanting to be added 
+     */
     public void add(Influencer added) {
         if (this.firstNode != null) {
             Influencer current = this.firstNode;
@@ -59,6 +89,10 @@ public class LinkedList {
         this.size++;
     }
 
+    /**
+     * removes specific influencer 
+     * @return 
+     */
     public Influencer remove() {
         Influencer node = null;
         if (this.firstNode != null && this.firstNode.getNext() != null) {

@@ -128,7 +128,8 @@ public class Influencer {
         int post,
         int follow,
         int comm,
-        int view) {
+        int view) 
+    {
         this.month = mon;
         this.username = user;
         this.channelName = chanName;
