@@ -4,11 +4,23 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class FileHandler {
+
+/**
+ * File Handler Class 
+ */
+public class FileHandler 
+{
+    /**
+     * File Handler constructor 
+     */
     public FileHandler() {
         //Do Nothing...
     }
-    
+   /**
+     * Linked List constructor w parameter
+     * @param first influencer in the list 
+     * @return linked list 
+     */
     public LinkedList readFile(String fileName) {
         LinkedList list = new LinkedList();
         try {
