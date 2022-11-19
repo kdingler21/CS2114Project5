@@ -18,5 +18,22 @@ public class Input {
         
         LinkedList sortedAlphabet = sorter.sortByChannelName(sorted);
         LinkedList sortedEngagement = sorter.sortByEngagementRate(sorted);
+        
+         while (sortedAlphabet.getFirstNode() != null && sortedAlphabet.next() != null)
+        {
+            Influencer curr = sortedAlphabet.getFirstNode(); 
+            System.out.println(curr.getChannelName().toString());
+            System.out.println("traditional: " + curr.getTraditionalEngagementRate());
+            System.out.println("==========");
+        }
+        System.out.println("**********");
+        System.out.println("**********");
+        while (sortedAlphabet.getFirstNode() != null && sortedAlphabet.next() != null)
+        {
+            Influencer curr = sortedAlphabet.getFirstNode(); 
+            System.out.println(curr.getChannelName().toString());
+            System.out.println("traditional: " + curr.getReachEngagementRate());
+            System.out.println("==========");
+        }
     }
 }
