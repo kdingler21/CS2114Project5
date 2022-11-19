@@ -2,22 +2,15 @@ package project5;
 
 public class Sorter {
     
-    private LinkedList list;
-    private int totalEngagement;
-    private int totalFollowers;
-    private int numComments;
-    private int numLikes;
-    
     public Sorter() {
-        
-        totalEngagement = numComments + numLikes;
+        //Do Nothing...
     }
     
     /**
      * sorts list alphabetical order by channel name
      * @return 
      */
-    public LinkedList sortByChannelName(){
+    public LinkedList sortByChannelName(LinkedList list){
         return null;
     }
     
@@ -25,38 +18,67 @@ public class Sorter {
      * sorts 
      * @return
      */
-    public LinkedList sortByEngagementRate(){
+    public LinkedList sortByEngagementRate(LinkedList list){
         return null;
     }
     
     /**
      * calculates engagement rate using traditional engagement rate formula
      * 
-     * @return
-     *        engagement rate
+     * @return engagement rates array
+     *                  engagement rate
      */
-    public double getEngagementRate() {
-        return (totalEngagement / totalFollowers) * 0.1;
+    public double[] getEngagementRates(LinkedList list) {
+        double array[] = new double[list.getSize()];
+        Influencer current = list.getFirstNode();
+        int count = 0;
+        while (current != null && count < array.length) {
+            double totalEngagement = current.getComments() + current.getLikes();
+            double engagementRate = (totalEngagement / current.getFollowers()) * 0.1;
+            array[count] = engagementRate;
+            
+            count++;
+            current = current.getNext();
+        }
+        return array;
     }
     
     /**
      * gets total engagement
      * 
-     * @return engagement
+     * @return engagement array
      *                   total engagement
      */
-    public int getTotalEngagement() {
-        return totalEngagement;
+    public double[] getTotalEngagement(LinkedList list) {
+        double array[] = new double[list.getSize()];
+        Influencer current = list.getFirstNode();
+        int count = 0;
+        while (current != null && count < array.length) {
+            double totalEngagement = current.getComments() + current.getLikes();
+            array[count] = totalEngagement;
+            
+            count++;
+            current = current.getNext();
+        }
+        return array;
     }
     
     /**
      * gets total number of followers
-     * @return
+     * 
+     * @return followers array
+     *                  total followers
      */
-    public int getTotalFollowers() {
-        return totalFollowers;
+    public double[] getTotalFollowers(LinkedList list) {
+        double array[] = new double[list.getSize()];
+        Influencer current = list.getFirstNode();
+        int count = 0;
+        while (current != null && count < array.length) {
+            array[count] = current.getFollowers();
+            
+            count++;
+            current = current.getNext();
+        }
+        return array;
     }
-    
-    
-
 }

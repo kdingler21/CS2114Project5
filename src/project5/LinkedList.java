@@ -20,7 +20,12 @@ public class LinkedList {
         return this.firstNode;
     }
 
+    
+    public int getSize() {
+        return this.size;
+    }
 
+    
     public void add(Influencer added) {
         if (this.firstNode != null) {
             Influencer current = this.firstNode;
@@ -38,6 +43,7 @@ public class LinkedList {
         else {
             this.firstNode.setNext(added);
         }
+        size++;
     }
 
 
@@ -62,12 +68,7 @@ public class LinkedList {
             node = this.firstNode;
             this.firstNode = null;
         }
+        size--;
         return node;
-    }
-
-
-    public String toString() {
-        String output = "";
-        return output;
     }
 }

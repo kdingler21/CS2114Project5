@@ -1,7 +1,6 @@
 package project5;
 
-public class Influencer 
-{
+public class Influencer {
     private Influencer nextNode;
     private String month;
     private String username;
@@ -111,5 +110,4 @@ public class Influencer
         {
             return views;
         }
-        
 }
