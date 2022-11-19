@@ -22,18 +22,20 @@ public class Input {
          while (sortedAlphabet.getFirstNode() != null && sortedAlphabet.next() != null)
         {
             Influencer curr = sortedAlphabet.getFirstNode(); 
-            System.out.println(curr.getChannelName().toString());
+            System.out.println(curr.getChannelName());
             System.out.println("traditional: " + curr.getTraditionalEngagementRate());
             System.out.println("==========");
         }
         System.out.println("**********");
         System.out.println("**********");
-        while (sortedAlphabet.getFirstNode() != null && sortedAlphabet.next() != null)
+        for (int i = 0; i < sortedEngagement.length; i++)
         {
-            Influencer curr = sortedAlphabet.getFirstNode(); 
-            System.out.println(curr.getChannelName().toString());
-            System.out.println("traditional: " + curr.getReachEngagementRate());
-            System.out.println("==========");
+            if (sortedEngagement[i] != null)
+            {
+                System.out.println(sortedEngagement[i].getChannelName());
+                System.out.println(sortedEngagement[i].getTraditionalEngagementRate());
+                System.out.println("==========");               
+            }
         }
     }
 }
