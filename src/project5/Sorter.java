@@ -92,7 +92,7 @@ public class Sorter {
             Influencer key = arr[i];
             int j = i - 1;
             
-            while(j >= 0 && arr[j].getTraditionalEngagementRate() > key.getTraditionalEngagementRate()) {
+            while(j >= 0 && arr[j].getReachEngagementRate() > key.getReachEngagementRate()) {
                 arr[j + 1] = arr[j];
                 j = j - 1;
             }
