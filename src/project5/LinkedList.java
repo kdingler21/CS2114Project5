@@ -59,7 +59,6 @@ public class LinkedList {
         this.size++;
     }
 
-
     public Influencer remove() {
         Influencer node = null;
         if (this.firstNode != null && this.firstNode.getNext() != null) {
@@ -83,5 +82,25 @@ public class LinkedList {
         }
         this.size--;
         return node;
+    }
+    
+    /**
+     * converts linked list to an array
+     * @return
+     *        linked list as an array
+     */
+    public Influencer[] toArray() {
+        
+        Influencer[] newArray = new Influencer[size];
+        Influencer node = this.getFirstNode();
+        
+        int i = 0;
+        while(node != null) {
+            newArray[i] = node;
+            node = node.getNext();
+            i++;
+        }
+
+        return newArray;  
     }
 }
