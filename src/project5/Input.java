@@ -11,6 +11,12 @@ public class Input {
         }
         
         FileHandler handler = new FileHandler();
+        Sorter sorter = new Sorter();
+        
         LinkedList list = handler.readFile(inputFile);
+        LinkedList sorted = sorter.sortChannels(list);
+        
+        LinkedList sortedAlphabet = sorter.sortByChannelName(sorted);
+        LinkedList sortedEngagement = sorter.sortByEngagementRate(sorted);
     }
 }
