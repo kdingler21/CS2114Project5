@@ -1,7 +1,7 @@
 package project5;
 
 /**
- * 
+ * Influencer class
  * @author Mike Ferrante, Katie Dingler, Sushen Kolakaketi
  * @version 11.19.2022
  * 
