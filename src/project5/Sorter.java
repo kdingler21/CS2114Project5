@@ -3,7 +3,6 @@ package project5;
 public class Sorter {
     
     private LinkedList list;
-    private double engagementRate;
     private int totalEngagement;
     private int totalFollowers;
     private int numComments;
@@ -12,7 +11,6 @@ public class Sorter {
     public Sorter() {
         
         totalEngagement = numComments + numLikes;
-        engagementRate = (totalEngagement / totalFollowers) * 0.1;
     }
     
     /**
@@ -38,7 +36,7 @@ public class Sorter {
      *        engagement rate
      */
     public double getEngagementRate() {
-        return engagementRate;
+        return (totalEngagement / totalFollowers) * 0.1;
     }
     
     /**
