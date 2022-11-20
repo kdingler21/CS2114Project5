@@ -26,7 +26,7 @@ public class InputTest extends student.TestCase {
     /**
      * sets up any needed variables for test methods
      */
-    public void setUp() {
+    public void setUp() { 
 
         fileData = null;
     }

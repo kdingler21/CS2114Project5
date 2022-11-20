@@ -12,7 +12,7 @@ public class SorterTest extends TestCase {
     private Influencer influencer2;
     private Influencer influencer3;
     private Influencer influencer4;
-    private LinkedList list;
+    private LinkedList list; 
     private Sorter sorter;
     
     /**
