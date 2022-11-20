@@ -1,23 +1,37 @@
 package project5;
 
+/**
+ * Linked list class
+ * @author Mike Ferrante, Katie Dingler, Sushen Kolakaketi
+ * @version 11/19/22
+ */
 public class LinkedList {
     private Influencer firstNode;
     private Influencer nextNode;
     private int size;
 
+    /**
+     * dafault constructor 
+     */
     public LinkedList() {
         this.firstNode = null;
         this.nextNode = null;
         this.size = 0;
     }
 
-
+    /**
+     * has parameter constructor
+     * @param first in the list
+     */
     public LinkedList(Influencer first) {
         this.firstNode = first;
         this.size++;
     }
 
-
+    /**
+     * gets the first influencer 
+     * @return
+     */
     public Influencer getFirstNode() {
         return this.firstNode;
     }

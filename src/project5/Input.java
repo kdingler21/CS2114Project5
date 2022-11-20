@@ -2,7 +2,8 @@ package project5;
 
 /**
  * Input class, project runner 
- * 
+ * @author Mike Ferrante, Katie Dingler, Sushen Kolakaketi
+ * @version 11/19/22
  */
 public class Input {
     /**

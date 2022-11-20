@@ -1,6 +1,11 @@
 package project5;
 import student.TestCase;
 
+/**
+ * testing our sorters 
+ * @author katiedingler
+ * @version 11/19/22
+ */
 public class SorterTest extends TestCase {
     
     private Influencer influencer;
@@ -10,6 +15,9 @@ public class SorterTest extends TestCase {
     private LinkedList list;
     private Sorter sorter;
     
+    /**
+     * sets up the test 
+     */
     public void setUp() {
         influencer = new Influencer("jan", "john", "john123", "US", "sports", 10, 10, 10, 10, 20); // 0.1
         influencer2 = new Influencer("feb", "mike", "mike1", "US", "sports", 5, 5, 5, 5, 4); // 0.25
@@ -24,7 +32,9 @@ public class SorterTest extends TestCase {
         sorter = new Sorter();
 
     }
-    
+    /**
+     * checking if sort by reach works correctly 
+     */
     public void testSortByReachEngagementRate() {
         assertEquals(sorter.sortByReachEngagementRate(list)[0], influencer);
         assertEquals(sorter.sortByReachEngagementRate(list)[1], influencer4);

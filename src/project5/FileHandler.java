@@ -7,6 +7,8 @@ import java.io.IOException;
 
 /**
  * File Handler Class 
+ * @author Mike Ferrante, Katie Dingler, Sushen Kolakaketi
+ * @version 11/19/22
  */
 public class FileHandler 
 {
