@@ -4,7 +4,6 @@ package project5;
  * Input class, project runner 
  * 
  */
- 
 public class Input {
     /**
      * Main Run Method
