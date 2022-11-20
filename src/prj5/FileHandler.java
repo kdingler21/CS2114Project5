@@ -1,4 +1,4 @@
-package project5;
+package prj5;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

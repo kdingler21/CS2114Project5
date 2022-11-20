@@ -1,4 +1,4 @@
-package project5;
+package prj5;
 /**
  * 
  * @author Mike Ferrante, Katie Dingler, Sushen Kolakaketi
