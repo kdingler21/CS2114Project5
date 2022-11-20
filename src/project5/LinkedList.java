@@ -11,7 +11,7 @@ public class LinkedList {
     private int size;
 
     /**
-     * dafault constructor 
+     * Listed List default constructor 
      */
     public LinkedList() {
         this.firstNode = null;
@@ -21,7 +21,8 @@ public class LinkedList {
 
     /**
      * has parameter constructor
-     * @param first in the list
+     * Linked List constructor w parameter
+     * @param first influencer in the list 
      */
     public LinkedList(Influencer first) {
         this.firstNode = first;
@@ -31,6 +32,8 @@ public class LinkedList {
     /**
      * gets the first influencer 
      * @return
+     * gets the first node 
+     * @return first node 
      */
     public Influencer getFirstNode() {
         return this.firstNode;
@@ -98,14 +101,14 @@ public class LinkedList {
         }
 
         else {
-            this.firstNode.setNext(added);
+            this.firstNode = added;
         }
         this.size++;
     }
 
     /**
      * removes specific influencer 
-     * @return 
+     * @return influencer removed 
      */
     public Influencer remove() {
         Influencer node = null;
