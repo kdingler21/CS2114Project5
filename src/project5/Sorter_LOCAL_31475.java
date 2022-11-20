@@ -4,11 +4,12 @@ package project5;
  * @author Mike Ferrante, Katie Dingler, Sushen Kolakaketi
  * @version 11.19.2022
  */
-public class Sorter
-{
-
-    public Sorter() 
-    {
+public class Sorter {
+    
+    /**
+     * Constructor
+     */
+    public Sorter() {
         // Do Nothing...
     }
 
@@ -19,8 +20,7 @@ public class Sorter
      * @return LinkedList
      *         sorted list
      */
-    public LinkedList sortChannels(LinkedList list) 
-    {
+    public LinkedList sortChannels(LinkedList list) {
         LinkedList sorted = new LinkedList();
         Influencer current = list.getFirstNode();
         int count = 0;
@@ -111,8 +111,7 @@ public class Sorter
      * @return arr
      *         sorted list as an array
      */
-    public Influencer[] sortByReachEngagementRate(LinkedList list) 
-    {
+    public Influencer[] sortByReachEngagementRate(LinkedList list) {
         Influencer[] arr = list.toArray();
         int size = arr.length;
 
@@ -131,4 +130,3 @@ public class Sorter
         return arr;
     }
 }
-

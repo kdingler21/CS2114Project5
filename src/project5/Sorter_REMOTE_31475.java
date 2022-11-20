@@ -1,14 +1,9 @@
 package project5;
-/**
- * 
- * @author Mike Ferrante, Katie Dingler, Sushen Kolakaketi
- * @version 11.19.2022
- */
-public class Sorter
-{
 
-    public Sorter() 
-    {
+
+public class Sorter{
+
+    public Sorter() {
         // Do Nothing...
     }
 
@@ -19,8 +14,7 @@ public class Sorter
      * @return LinkedList
      *         sorted list
      */
-    public LinkedList sortChannels(LinkedList list) 
-    {
+    public LinkedList sortChannels(LinkedList list) {
         LinkedList sorted = new LinkedList();
         Influencer current = list.getFirstNode();
         int count = 0;
@@ -41,7 +35,7 @@ public class Sorter
 
             count++;
             current = current.getNext();
-        }
+        } 
         return sorted;
     }
 
@@ -49,86 +43,74 @@ public class Sorter
     /**
      * sorts list alphabetical order by channel name
      * 
-     * @param list
-     *            list to be sorted
-     * @return arr
-     *         sorted list as an array
+     * @return LinkedList
+     *         sorted list
      */
-    public Influencer[] sortByChannelName(LinkedList list) {
+    public LinkedList sortByChannelName(LinkedList list) {
         Influencer[] arr = list.toArray();
-
-        int size = arr.length;
-
-        for (int i = 1; i < size; i++) {
-            Influencer key = arr[i];
-            int j = i - 1;
-
-            while (j >= 0 && (arr[j].getChannelName().compareTo(key
-                .getChannelName()) > 0)) {
-                arr[j + 1] = arr[j];
-                j = j - 1;
-            }
-            arr[j + 1] = key;
-        }
-
-        return arr;
+        
+        
+        
+        return null;
     }
 
 
     /**
      * sorts list by traditional engagement rate
-     * 
      * @param list
-     *            list to be sorted
-     * @return arr
-     *         sorted list as an array
+     *            
+     * @return LinkedList
+     *         sorted list
      */
     public Influencer[] sortByTraditioanlEngagementRate(LinkedList list) {
         Influencer[] arr = list.toArray();
         int size = arr.length;
-
-        for (int i = 1; i < size; i++) {
+        
+        for(int i = 1; i < size; i++) {
             Influencer key = arr[i];
             int j = i - 1;
-
-            while (j >= 0 && arr[j].getTraditionalEngagementRate() > key
-                .getTraditionalEngagementRate()) {
+            
+            while(j >= 0 && arr[j].getTraditionalEngagementRate() > key.getTraditionalEngagementRate()) {
                 arr[j + 1] = arr[j];
                 j = j - 1;
             }
             arr[j + 1] = key;
         }
-
+   
         return arr;
     }
-
-
+    
     /**
      * sorts list by reach engagement rate
-     * 
      * @param list
-     *            list to be sorted
-     * @return arr
-     *         sorted list as an array
+     * @return
      */
-    public Influencer[] sortByReachEngagementRate(LinkedList list) 
-    {
+    public Influencer[] sortByReachEngagementRate(LinkedList list) {
         Influencer[] arr = list.toArray();
         int size = arr.length;
-
-        for (int i = 1; i < size; i++) {
+        
+        for(int i = 1; i < size; i++) {
             Influencer key = arr[i];
             int j = i - 1;
-
-            while (j >= 0 && arr[j].getReachEngagementRate() > key
-                .getReachEngagementRate()) {
+            
+            while(j >= 0 && arr[j].getReachEngagementRate() > key.getReachEngagementRate()) {
                 arr[j + 1] = arr[j];
                 j = j - 1;
             }
             arr[j + 1] = key;
         }
-
+   
         return arr;
     }
-}
 
+//    @Override
+//    public int compareTo(Object obj) 
+//    {
+//        if (obj != null)
+//        {
+//            Influencer other = ((Influencer)obj);
+//        }
+//        
+//        return 0;
+//    }
+}

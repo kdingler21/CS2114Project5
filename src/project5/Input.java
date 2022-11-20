@@ -20,16 +20,18 @@ public class Input {
         LinkedList list = handler.readFile(inputFile);
         LinkedList sorted = sorter.sortChannels(list);
         
-        LinkedList sortedAlphabet = sorter.sortByChannelName(sorted);
+        Influencer[] sortedAlphabet = sorter.sortByChannelName(sorted);
         Influencer[] sortedEngagement = sorter.sortByReachEngagementRate(sorted);
         
 
-        while (sortedAlphabet.getFirstNode() != null && sortedAlphabet.next() != null)
+        for (int i = 0; i < sortedAlphabet.length; i++)
         {
-            Influencer curr = sortedAlphabet.getFirstNode(); 
-            System.out.println(curr.getChannelName());
-            System.out.println("traditional: " + curr.getTraditionalEngagementRate());
-            System.out.println("==========");
+            if (sortedAlphabet[i] != null)
+            {
+                System.out.println(sortedAlphabet[i].getChannelName());
+                System.out.println(sortedAlphabet[i].getTraditionalEngagementRate());
+                System.out.println("==========");               
+            }
         }
         System.out.println("**********");
         System.out.println("**********");
