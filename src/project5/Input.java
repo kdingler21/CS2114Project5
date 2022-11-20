@@ -9,14 +9,14 @@ public class Input {
     /**
      * Main Run Method
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
         String inputFile = "SampleInput1_2022.csv"; 
         if (args.length > 0) {
             inputFile = args[0];
         }
         
-        FileHandler handler = new FileHandler();
-        Sorter sorter = new Sorter();
+        FileHandler handler = new FileHandler(); 
+        Sorter sorter = new Sorter(); 
         
         LinkedList list = handler.readFile(inputFile);
         LinkedList sorted = sorter.sortChannels(list);
