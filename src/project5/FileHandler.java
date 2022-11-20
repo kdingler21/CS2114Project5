@@ -20,7 +20,7 @@ public class FileHandler
     }
    /**
      * Linked List constructor w parameter
-     * @param first influencer in the list 
+     * @param first influencer in the list  
      * @return linked list 
      */
     public LinkedList readFile(String fileName) {
