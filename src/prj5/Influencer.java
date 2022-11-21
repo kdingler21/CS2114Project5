@@ -2,6 +2,7 @@ package prj5;
 
 /**
  * Influencer class
+ * 
  * @author Mike Ferrante, Katie Dingler, Sushen Kolakaketi
  * @version 11.19.2022
  * 
@@ -128,8 +129,7 @@ public class Influencer {
         int post,
         int follow,
         int comm,
-        int view) 
-    {
+        int view) {
         this.month = mon;
         this.username = user;
         this.channelName = chanName;
