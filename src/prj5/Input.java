@@ -37,7 +37,7 @@ public class Input {
                 System.out.println(sortedAlphabet[i].getChannelName());
                 System.out.println(sortedAlphabet[i].getTraditionalEngagementRate());
                 System.out.println("==========");               
-            }
+            } 
         }
         System.out.println("**********");
         System.out.println("**********");
