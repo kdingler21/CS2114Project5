@@ -1,36 +1,39 @@
 package prj5;
 
 import java.io.BufferedReader;
-//import java.io.BufferedReader;
+// import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-//import java.io.FileReader;
-//import java.io.IOException;
+// import java.io.FileReader;
+// import java.io.IOException;
 import java.text.ParseException;
 import java.util.Scanner;
 
-
 /**
- * File Handler Class 
+ * File Handler Class
+ * 
  * @author Mike Ferrante, Katie Dingler, Sushen Kolakaketi
  * @version 11/19/22
  */
-public class FileHandler 
-{
+public class FileHandler {
     /**
-     * File Handler constructor 
+     * File Handler constructor
      */
     public FileHandler() {
-        //Do Nothing...
+        // Do Nothing...
     }
-   /**
+
+
+    /**
      * Linked List constructor w parameter
-     * @param first influencer in the list  
-     * @return linked list 
- * @throws FileNotFoundException 
- * @throws ParseException 
+     * 
+     * @param first
+     *            influencer in the list
+     * @return linked list
+     * @throws FileNotFoundException
+     * @throws ParseException
      */
     public LinkedList readFile(String fileName) {
         LinkedList list = new LinkedList();
@@ -39,10 +42,9 @@ public class FileHandler
             String splitBy = ",";
             BufferedReader br = new BufferedReader(new FileReader(fileName));
             br.readLine();
-            while ((line = br.readLine()) != null) 
-          {  
+            while ((line = br.readLine()) != null) {
                 String data[] = line.split(splitBy);
-                
+
                 String month = data[0];
                 String username = data[1];
                 String channelName = data[2];
@@ -53,15 +55,15 @@ public class FileHandler
                 int followers = Integer.parseInt(data[7]);
                 int comments = Integer.parseInt(data[8]);
                 int views = Integer.parseInt(data[9]);
-                
-                list.add(new Influencer(month, username, channelName, country, topic,
-                    likes, posts, followers, comments, views));
-            }   
+
+                list.add(new Influencer(month, username, channelName, country,
+                    topic, likes, posts, followers, comments, views));
+            }
         }
-        
+
         catch (IOException e) {
             e.printStackTrace();
         }
-       return list;
+        return list;
     }
 }
