@@ -10,7 +10,7 @@ public class LinkedList {
     private Influencer nextNode;
     private int size;
 
-    /**
+    /** 
      * Listed List default constructor 
      */
     public LinkedList() {
