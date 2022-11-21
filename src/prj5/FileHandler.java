@@ -30,7 +30,7 @@ public class FileHandler
             String splitBy = ",";
             BufferedReader br = new BufferedReader(new FileReader(fileName));
             while ((line = br.readLine()) != null) {  
-                String data[] = line.split(splitBy);
+                String[] data = line.split(splitBy);
                 
                 String month = data[0];
                 String username = data[1];

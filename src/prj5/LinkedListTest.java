@@ -57,4 +57,33 @@ public class LinkedListTest extends TestCase
     {
         assertEquals(listDefault.getSize(), 3);
     }
+    
+    /**
+     * find name 
+     */
+    public void testFindName()
+    {
+        assertEquals(list.findName("mike1"), influencer2);
+        assertNull(list.findName("joe"));
+    }
+    
+    /**
+     * tests add 
+     */
+    public void testAdd()
+    {
+        listDefault.add(influencer4);
+        assertEquals(listDefault.getSize(), 4);
+        LinkedList one = new LinkedList();
+        one.add(influencer4);
+        assertTrue(one.getFirstNode().equals(influencer4));
+    }
+    /**
+     * testing remove
+     */
+    public void testRemove()
+    {
+        listDefault.remove();
+        System.out.println(listDefault.toString());
+    }
 }
