@@ -1,5 +1,8 @@
 package prj5;
 
+import java.io.FileNotFoundException;
+import java.text.ParseException;
+
 /**
  * Input class, project runner 
  * @author Mike Ferrante, Katie Dingler, Sushen Kolakaketi
@@ -8,8 +11,10 @@ package prj5;
 public class Input {
     /**
      * Main Run Method
+     * @throws ParseException 
+     * @throws FileNotFoundException 
      */
-    public static void main(String[] args) { 
+    public static void main(String[] args) throws FileNotFoundException, ParseException { 
         String inputFile = "SampleInput1_2022.csv"; 
         if (args.length > 0) {
             inputFile = args[0];
