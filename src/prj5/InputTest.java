@@ -23,11 +23,10 @@ public class InputTest extends student.TestCase {
     private String fileName;
     private Scanner fileData;
 
-
     /**
      * sets up any needed variables for test methods
      */
-    public void setUp() { 
+    public void setUp() {
 
         fileData = null;
     }
@@ -37,7 +36,8 @@ public class InputTest extends student.TestCase {
      * Test the program with randomly generated data that have NA fields.
      * Gathers the output from StdOut and compares it to
      * the expect output (stored in InfluencerOutput_2)
-     * @throws ParseException 
+     * 
+     * @throws ParseException
      *
      */
     @Hint("The main method is not working properly with input file - "
@@ -73,7 +73,8 @@ public class InputTest extends student.TestCase {
      * Test the program with randomly generated data that have NA fields.
      * Gathers the output from StdOut and compares it to
      * the expect output (stored in InfluencerOutput_2)
-     * @throws ParseException 
+     * 
+     * @throws ParseException
      *
      */
     @Hint("The main method is not working properly with input file - "
@@ -110,7 +111,8 @@ public class InputTest extends student.TestCase {
      * Gathers the output from StdOut and compares it to
      * the expect output (stored in InfluencerOutput_2).
      * Same as earlier test except with more detailed feedback.
-     * @throws ParseException 
+     * 
+     * @throws ParseException
      *
      */
     @Hint("The main method is not working properly with input file - "
