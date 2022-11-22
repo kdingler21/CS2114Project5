@@ -58,14 +58,21 @@ public class FileHandler {
                 int comments = Integer.parseInt(data[8]);
                 int views = Integer.parseInt(data[9]);
 
-               
+                
                 Influencer influencer = new Influencer(month, username, channelName, country,
                     topic, likes, posts, followers, comments, views);
+                
+                Boolean mon = false;
+                if (influencer.getMonth() == "January" || influencer.getMonth() == "February" || influencer.getMonth() == "March")
+                {
+                    mon = true;
+                }
+                
                 Influencer[] array = list.toArray();
                 Boolean has = false;
                 for (int i = 0; i < array.length; i++)
                 {
-                    if (array[i].getChannelName().equals(influencer.getChannelName()))
+                    if (array[i].getChannelName().equals(influencer.getChannelName()) && mon)
                     {
                         has = true;
                         array[i].setLikes((array[i].getLikes() + influencer.getLikes()));
@@ -75,8 +82,8 @@ public class FileHandler {
                         array[i].setViews((array[i].getViews() + influencer.getViews()));
                     }
                 }
-                if (!has)
-                {
+                if (!has && mon)
+                {          
                     list.add(influencer);
                 }
                 

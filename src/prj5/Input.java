@@ -47,7 +47,7 @@ public class Input {
             if (sortedEngagement[i] != null) {
                 System.out.println(sortedEngagement[i].getChannelName());
                 System.out.println("reach: " + sortedEngagement[i]
-                    .getTraditionalEngagementRate());
+                    .getReachEngagementRate());
                 System.out.println("==========");
             }
         }
