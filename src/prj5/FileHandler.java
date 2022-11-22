@@ -37,9 +37,11 @@ public class FileHandler {
      */
     public LinkedList readFile(String fileName) {
         LinkedList list = new LinkedList();
+  
         try {
             String line = "";
             String splitBy = ",";
+            @SuppressWarnings("resource")
             BufferedReader br = new BufferedReader(new FileReader(fileName));
             br.readLine();
             while ((line = br.readLine()) != null) {
@@ -56,14 +58,35 @@ public class FileHandler {
                 int comments = Integer.parseInt(data[8]);
                 int views = Integer.parseInt(data[9]);
 
-                list.add(new Influencer(month, username, channelName, country,
-                    topic, likes, posts, followers, comments, views));
+               
+                Influencer influencer = new Influencer(month, username, channelName, country,
+                    topic, likes, posts, followers, comments, views);
+                Influencer[] array = list.toArray();
+                Boolean has = false;
+                for (int i = 0; i < array.length; i++)
+                {
+                    if (array[i].getChannelName().equals(influencer.getChannelName()))
+                    {
+                        has = true;
+                        array[i].setLikes((array[i].getLikes() + influencer.getLikes()));
+                        array[i].setPosts((array[i].getPosts() + influencer.getPosts()));
+                        array[i].setFollowers((array[i].getFollowers() + influencer.getFollowers()));
+                        array[i].setComments((array[i].getComments() + influencer.getComments()));
+                        array[i].setViews((array[i].getViews() + influencer.getViews()));
+                    }
+                }
+                if (!has)
+                {
+                    list.add(influencer);
+                }
+                
+                
             }
         }
 
         catch (IOException e) {
             e.printStackTrace();
         }
-        return list;
+        return list; 
     }
 }

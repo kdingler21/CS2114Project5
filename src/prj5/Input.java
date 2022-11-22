@@ -24,9 +24,10 @@ public class Input {
 
         FileHandler handler = new FileHandler();
         Sorter sorter = new Sorter();
-
-        LinkedList list = handler.readFile(inputFile);
+        
+        LinkedList list = handler.readFile(inputFile);      
         LinkedList sorted = sorter.sortChannels(list);
+        
 
         Influencer[] sortedAlphabet = sorter.sortByChannelName(sorted);
         Influencer[] sortedEngagement = sorter.sortByReachEngagementRate(
@@ -35,7 +36,7 @@ public class Input {
         for (int i = 0; i < sortedAlphabet.length; i++) {
             if (sortedAlphabet[i] != null) {
                 System.out.println(sortedAlphabet[i].getChannelName());
-                System.out.println(sortedAlphabet[i]
+                System.out.println("traditional: " + sortedAlphabet[i]
                     .getTraditionalEngagementRate());
                 System.out.println("==========");
             }
@@ -45,7 +46,7 @@ public class Input {
         for (int i = 0; i < sortedEngagement.length; i++) {
             if (sortedEngagement[i] != null) {
                 System.out.println(sortedEngagement[i].getChannelName());
-                System.out.println(sortedEngagement[i]
+                System.out.println("reach: " + sortedEngagement[i]
                     .getTraditionalEngagementRate());
                 System.out.println("==========");
             }

@@ -207,7 +207,7 @@ public class Influencer {
     public int getLikes() {
         return likes;
     }
-
+   
 
     /**
      * getter method, gets posts
