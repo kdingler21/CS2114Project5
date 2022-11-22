@@ -19,6 +19,7 @@ public class Influencer {
     private int followers;
     private int comments;
     private int views;
+    public int marchFollowers;
 
     /**
      * constructor, sets next node to null
@@ -79,8 +80,10 @@ public class Influencer {
      * @return
      *         engagement rate
      */
-    public double getTraditionalEngagementRate() {
-        return ((this.getTotalEngagement() / this.followers) * 0.1);
+    public double getTraditionalEngagementRate() 
+    {
+       
+        return ((this.getTotalEngagement() / this.followers) * 100); 
     }
 
 
@@ -91,7 +94,8 @@ public class Influencer {
      *         engagement rate
      */
     public double getReachEngagementRate() {
-        return ((this.getTotalEngagement() / this.views) * 0.1);
+       
+        return ((this.getTotalEngagement() / this.views) * 100);
     }
 
 

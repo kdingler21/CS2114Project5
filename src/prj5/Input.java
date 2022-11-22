@@ -1,6 +1,7 @@
 package prj5;
 
 import java.io.FileNotFoundException;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 
 /**
@@ -26,18 +27,27 @@ public class Input {
         Sorter sorter = new Sorter();
         
         LinkedList list = handler.readFile(inputFile);      
-        LinkedList sorted = sorter.sortChannels(list);
-        
+        LinkedList sorted = sorter.sortChannels(list);       
 
         Influencer[] sortedAlphabet = sorter.sortByChannelName(sorted);
-        Influencer[] sortedEngagement = sorter.sortByReachEngagementRate(
-            sorted);
-
-        for (int i = 0; i < sortedAlphabet.length; i++) {
-            if (sortedAlphabet[i] != null) {
+        Influencer[] sortedEngagement = sorter.sortByReachEngagementRate(sorted);
+        
+        DecimalFormat deci = new DecimalFormat("#.#");
+        
+        for (int i = 0; i < sortedAlphabet.length; i++) 
+        {
+            if (sortedAlphabet[i] != null) 
+            {
                 System.out.println(sortedAlphabet[i].getChannelName());
-                System.out.println("traditional: " + sortedAlphabet[i]
-                    .getTraditionalEngagementRate());
+                if (sortedAlphabet[i].getFollowers() == 0)
+                {
+                    System.out.println("N/A");
+                }
+                else
+                {
+                System.out.println("traditional: " + deci.format(sortedAlphabet[i]
+                    .getTraditionalEngagementRate()));
+                }
                 System.out.println("==========");
             }
         }
@@ -46,8 +56,15 @@ public class Input {
         for (int i = 0; i < sortedEngagement.length; i++) {
             if (sortedEngagement[i] != null) {
                 System.out.println(sortedEngagement[i].getChannelName());
-                System.out.println("reach: " + sortedEngagement[i]
-                    .getReachEngagementRate());
+                if (sortedEngagement[i].getFollowers() == 0)
+                {
+                    System.out.println("N/A");
+                }
+                else 
+                {
+                System.out.println("reach: " + deci.format(sortedEngagement[i]
+                    .getReachEngagementRate())); 
+                }
                 System.out.println("==========");
             }
         }
