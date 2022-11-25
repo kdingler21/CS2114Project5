@@ -19,7 +19,15 @@ public class Influencer {
     private int followers;
     private int comments;
     private int views;
-    public int marchFollowers;
+    private int marchFollowers;
+    private int febFollowers;
+    private int janFollowers;
+    private int marchLikes;
+    private int febLikes;
+    private int janLikes;
+    private int marchComments;
+    private int febComments;
+    private int janComments;
 
     /**
      * constructor, sets next node to null
@@ -64,12 +72,21 @@ public class Influencer {
 
 
     /**
-     * gets influencers total engagement by adding comments and likes
+     * gets influencer's total engagement by adding comments and likes
      * 
      * @return
      *         the total engagement
      */
     public double getTotalEngagement() {
+        return (this.comments + this.likes);
+    }
+    /**
+     * gets influencer's January engagement by adding comments and likes
+     * 
+     * @return
+     *         the total engagement
+     */
+    public double getJanEngagement() {
         return (this.comments + this.likes);
     }
 
@@ -94,7 +111,7 @@ public class Influencer {
      *         engagement rate
      */
     public double getReachEngagementRate() {
-       
+         
         return ((this.getTotalEngagement() / this.views) * 100);
     }
 
@@ -309,4 +326,125 @@ public class Influencer {
     public void setViews(int views) {
         this.views = views;
     }
+    /**
+     * sets march followers
+     */
+    public void setMarchLikes(int follow)
+    {
+        this.marchLikes = follow;
+    }
+    /**
+     * sets feb followers
+     */
+    public void setFebLikes(int follow)
+    {
+        this.febFollowers = follow;
+    }
+    /**
+     * sets jan followers
+     */
+    public void setJanLikes(int follow) 
+    {
+        this.janFollowers = follow;
+    }
+    /**
+     * gets march 
+     */
+    public int getMarchLikes()
+    {
+        return marchFollowers;
+    }
+    /**
+     * gets reb 
+     */
+    public int getFebLikes()
+    {
+        return febFollowers;
+    }
+    /**
+     * gets jan 
+     */
+    public int getJanLikes()
+    {
+        return janFollowers;
+    }
+    public void setMarchFollowers(int follow)
+    {
+        this.marchFollowers = follow;
+    }
+    /**
+     * sets feb followers
+     */
+    public void setFebFollowers(int follow)
+    {
+        this.febFollowers = follow;
+    }
+    /**
+     * sets jan followers
+     */
+    public void setJanFollowers(int follow) 
+    {
+        this.janFollowers = follow;
+    }
+    /**
+     * gets march 
+     */
+    public int getMarchFollowers()
+    {
+        return marchFollowers;
+    }
+    /**
+     * gets reb 
+     */
+    public int getFebFollowers()
+    {
+        return febFollowers;
+    }
+    /**
+     * gets jan 
+     */
+    public int getJanFollowers()
+    {
+        return janFollowers;
+    }
+    public void setMarchComments(int follow)
+    {
+        this.marchLikes = follow;
+    }
+    /**
+     * sets feb followers
+     */
+    public void setFebComments(int follow)
+    {
+        this.febFollowers = follow;
+    }
+    /**
+     * sets jan followers
+     */
+    public void setJanComments(int follow) 
+    {
+        this.janFollowers = follow;
+    }
+    /**
+     * gets march 
+     */
+    public int getMarchComments()
+    {
+        return marchFollowers;
+    }
+    /**
+     * gets reb 
+     */
+    public int getFebComments()
+    {
+        return febFollowers;
+    }
+    /**
+     * gets jan 
+     */
+    public int getJanComments()
+    {
+        return janFollowers;
+    }
+    
 }

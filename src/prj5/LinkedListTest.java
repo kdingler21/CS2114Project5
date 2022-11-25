@@ -93,6 +93,16 @@ public class LinkedListTest extends TestCase {
      */
     public void testRemove() {
         listDefault.remove();
-        System.out.println(listDefault.toString());
+        assertEquals(listDefault.getSize(), 2);
+        listDefault.remove();
+        assertEquals(listDefault.getSize(), 1);
+        listDefault.remove();
+        assertEquals(listDefault.getSize(), 0);
+        assertTrue(listDefault.getFirstNode() == null);
+//        listDefault.add(influencer);
+//        Influencer[] inf = new Influencer[1];
+//        inf[0] = influencer;
+//        assertTrue(listDefault.toArray().equals(inf));
     }
+    
 }

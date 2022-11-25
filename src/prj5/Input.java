@@ -27,10 +27,10 @@ public class Input {
         Sorter sorter = new Sorter();
         
         LinkedList list = handler.readFile(inputFile);      
-        LinkedList sorted = sorter.sortChannels(list);       
+      //  LinkedList sorted = sorter.sortChannels(list);       
 
-        Influencer[] sortedAlphabet = sorter.sortByChannelName(sorted);
-        Influencer[] sortedEngagement = sorter.sortByReachEngagementRate(sorted);
+        Influencer[] sortedAlphabet = sorter.sortByChannelName(list);
+        Influencer[] sortedEngagement = sorter.sortByReachEngagementRate(list);
         
         DecimalFormat deci = new DecimalFormat("#.#");
         
@@ -41,7 +41,7 @@ public class Input {
                 System.out.println(sortedAlphabet[i].getChannelName());
                 if (sortedAlphabet[i].getFollowers() == 0)
                 {
-                    System.out.println("N/A");
+                    System.out.println("traditional: N/A");
                 }
                 else
                 {
@@ -56,9 +56,9 @@ public class Input {
         for (int i = 0; i < sortedEngagement.length; i++) {
             if (sortedEngagement[i] != null) {
                 System.out.println(sortedEngagement[i].getChannelName());
-                if (sortedEngagement[i].getFollowers() == 0)
+                if (sortedEngagement[i].getViews() == 0)
                 {
-                    System.out.println("N/A");
+                    System.out.println("reach: N/A");
                 }
                 else 
                 {

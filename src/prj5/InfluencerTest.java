@@ -45,7 +45,7 @@ public class InfluencerTest extends TestCase {
      */
     public void testGetEngagement() {
         assertEquals(influencer.getTotalEngagement(), 20, .01);
-        assertEquals(influencer.getTraditionalEngagementRate(), .2, .01);
-        assertEquals(influencer.getReachEngagementRate(), .1, .01);
+        assertEquals(influencer.getTraditionalEngagementRate(), 200, .01);
+        assertEquals(influencer.getReachEngagementRate(), 100, .01);
     }
 }

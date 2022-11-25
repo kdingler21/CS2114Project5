@@ -67,10 +67,10 @@ public class SorterTest extends TestCase {
      * checking if sort by reach works correctly
      */
     public void testSortByReachEngagementRate() {
-        assertEquals(sorter.sortByReachEngagementRate(list)[0], influencer);
-        assertEquals(sorter.sortByReachEngagementRate(list)[1], influencer4);
-        assertEquals(sorter.sortByReachEngagementRate(list)[2], influencer2);
-        assertEquals(sorter.sortByReachEngagementRate(list)[3], influencer3);
+        assertEquals(sorter.sortByReachEngagementRate(list)[3], influencer);
+        assertEquals(sorter.sortByReachEngagementRate(list)[2], influencer4);
+        assertEquals(sorter.sortByReachEngagementRate(list)[1], influencer2);
+        assertEquals(sorter.sortByReachEngagementRate(list)[0], influencer3);
     }
 
 

@@ -80,17 +80,31 @@ public class FileHandler {
                         array[i].setFollowers((array[i].getFollowers() + influencer.getFollowers()));
                         array[i].setComments((array[i].getComments() + influencer.getComments()));
                         array[i].setViews((array[i].getViews() + influencer.getViews()));
+                        if (month.equals("Janurary")) 
+                        {
+                            array[i].setJanFollowers(influencer.getFollowers());
+                            array[i].setJanLikes(influencer.getLikes());
+                            array[i].setJanComments(influencer.getComments());
+                        } 
+                        if (month.equals("February")) 
+                        {
+                            array[i].setFebFollowers(influencer.getFebFollowers());
+                            array[i].setFebLikes(influencer.getLikes());
+                            array[i].setFebComments(influencer.getComments());
+                        } 
                         if (month.equals("March")) 
                         {
+                            array[i].setMarchFollowers(influencer.getMarchFollowers());
                             array[i].setFollowers(influencer.getFollowers());
-                        }
-                       
+                            array[i].setMarchLikes(influencer.getLikes());
+                            array[i].setMarchComments(influencer.getMarchComments()); 
+                        }                      
                     }
                 }
                 
                 if (!has && mon)
                 {          
-                    list.add(influencer);
+                    list.add(influencer); 
                 }
                 
                 
