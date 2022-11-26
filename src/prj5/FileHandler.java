@@ -36,7 +36,7 @@ public class FileHandler {
      * @throws ParseException
      */
     public LinkedList readFile(String fileName) {
-        LinkedList list = new LinkedList(); 
+        LinkedList list = new LinkedList();   
   
         try {
             String line = "";
@@ -62,49 +62,56 @@ public class FileHandler {
                 Influencer influencer = new Influencer(month, username, channelName, country,
                     topic, likes, posts, followers, comments, views);
                 
+                if (month.equals("Janurary"))  
+                {
+                    influencer.setJanFollowers(influencer.getFollowers());
+                    influencer.setJanLikes(influencer.getLikes());
+                    influencer.setJanComments(influencer.getComments()); 
+                    influencer.setJanViews(influencer.getViews());
+                } 
+                if (month.equals("February")) 
+                {
+                    influencer.setFebFollowers(influencer.getFollowers());
+                    influencer.setFebLikes(influencer.getLikes());
+                    influencer.setFebComments(influencer.getComments());
+                    influencer.setFebViews(influencer.getViews());
+                } 
+                if (month.equals("March")) 
+                {
+                    influencer.setMarchFollowers(influencer.getFollowers());
+                    influencer.setMarchLikes(influencer.getLikes());
+                    influencer.setMarchComments(influencer.getComments());  
+                    influencer.setMarchViews(influencer.getViews());
+                }  
                 Boolean mon = false;
                 if (influencer.getMonth().equals("January") || influencer.getMonth().equals("February") || influencer.getMonth().equals("March"))
                 {
                     mon = true;
                 }
                 
+                
                 Influencer[] array = list.toArray();
                 Boolean has = false;
                 for (int i = 0; i < array.length; i++) 
                 {
-                    if (array[i].getChannelName().equals(influencer.getChannelName()) && mon)
+                    if (array[i].getChannelName().equals(influencer.getChannelName()) && mon)     
                     {
                         has = true;
                         array[i].setLikes((array[i].getLikes() + influencer.getLikes()));
                         array[i].setPosts((array[i].getPosts() + influencer.getPosts()));
                         array[i].setFollowers((array[i].getFollowers() + influencer.getFollowers()));
                         array[i].setComments((array[i].getComments() + influencer.getComments()));
-                        array[i].setViews((array[i].getViews() + influencer.getViews()));
-                        if (month.equals("Janurary")) 
+                        array[i].setViews((array[i].getViews() + influencer.getViews()));       
+                        if (month.equals("March"))
                         {
-                            array[i].setJanFollowers(influencer.getFollowers());
-                            array[i].setJanLikes(influencer.getLikes());
-                            array[i].setJanComments(influencer.getComments());
-                        } 
-                        if (month.equals("February")) 
-                        {
-                            array[i].setFebFollowers(influencer.getFebFollowers());
-                            array[i].setFebLikes(influencer.getLikes());
-                            array[i].setFebComments(influencer.getComments());
-                        } 
-                        if (month.equals("March")) 
-                        {
-                            array[i].setMarchFollowers(influencer.getMarchFollowers());
                             array[i].setFollowers(influencer.getFollowers());
-                            array[i].setMarchLikes(influencer.getLikes());
-                            array[i].setMarchComments(influencer.getMarchComments()); 
-                        }                      
+                        }
+
                     }
-                }
-                
+                } 
                 if (!has && mon)
-                {          
-                    list.add(influencer); 
+                {           
+                    list.add(influencer);     
                 }
                 
                 

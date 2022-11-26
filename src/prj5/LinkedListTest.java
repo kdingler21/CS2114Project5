@@ -18,7 +18,7 @@ public class LinkedListTest extends TestCase {
 
     /**
      * sets up the test method
-     */
+     */ 
     public void setUp() {
         influencer = new Influencer("jan", "john", "john123", "US", "sports",
             10, 10, 10, 10, 20);
