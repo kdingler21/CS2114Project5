@@ -68,21 +68,7 @@ public class FileHandler {
                     influencer.setJanLikes(influencer.getLikes());
                     influencer.setJanComments(influencer.getComments()); 
                     influencer.setJanViews(influencer.getViews());
-                } 
-//                if (month.equals("February")) 
-//                {
-//                    influencer.setFebFollowers(influencer.getFollowers());
-//                    influencer.setFebLikes(influencer.getLikes());
-//                    influencer.setFebComments(influencer.getComments());
-//                    influencer.setFebViews(influencer.getViews());
-//                } 
-//                if (month.equals("March")) 
-//                {
-//                    influencer.setMarchFollowers(influencer.getFollowers());
-//                    influencer.setMarchLikes(influencer.getLikes());
-//                    influencer.setMarchComments(influencer.getComments());  
-//                    influencer.setMarchViews(influencer.getViews());
-//                }  
+                }   
                 Boolean mon = false;
                 if (influencer.getMonth().equals("January") || influencer.getMonth().equals("February") || influencer.getMonth().equals("March"))
                 {
