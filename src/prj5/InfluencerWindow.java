@@ -31,6 +31,8 @@ public class InfluencerWindow
         Button quitButton = new Button("Quit");
         quitButton.onClick(this,"clickedQuit");
         window.addButton(quitButton,WindowSide.EAST);
+        
+        list = mainList;
     }
   
     /**
