@@ -62,27 +62,27 @@ public class FileHandler {
                 Influencer influencer = new Influencer(month, username, channelName, country,
                     topic, likes, posts, followers, comments, views);
                 
-                if (month.equals("Janurary"))  
+                if (month.equals("January"))   
                 {
                     influencer.setJanFollowers(influencer.getFollowers());
                     influencer.setJanLikes(influencer.getLikes());
                     influencer.setJanComments(influencer.getComments()); 
                     influencer.setJanViews(influencer.getViews());
                 } 
-                if (month.equals("February")) 
-                {
-                    influencer.setFebFollowers(influencer.getFollowers());
-                    influencer.setFebLikes(influencer.getLikes());
-                    influencer.setFebComments(influencer.getComments());
-                    influencer.setFebViews(influencer.getViews());
-                } 
-                if (month.equals("March")) 
-                {
-                    influencer.setMarchFollowers(influencer.getFollowers());
-                    influencer.setMarchLikes(influencer.getLikes());
-                    influencer.setMarchComments(influencer.getComments());  
-                    influencer.setMarchViews(influencer.getViews());
-                }  
+//                if (month.equals("February")) 
+//                {
+//                    influencer.setFebFollowers(influencer.getFollowers());
+//                    influencer.setFebLikes(influencer.getLikes());
+//                    influencer.setFebComments(influencer.getComments());
+//                    influencer.setFebViews(influencer.getViews());
+//                } 
+//                if (month.equals("March")) 
+//                {
+//                    influencer.setMarchFollowers(influencer.getFollowers());
+//                    influencer.setMarchLikes(influencer.getLikes());
+//                    influencer.setMarchComments(influencer.getComments());  
+//                    influencer.setMarchViews(influencer.getViews());
+//                }  
                 Boolean mon = false;
                 if (influencer.getMonth().equals("January") || influencer.getMonth().equals("February") || influencer.getMonth().equals("March"))
                 {
@@ -101,7 +101,22 @@ public class FileHandler {
                         array[i].setPosts((array[i].getPosts() + influencer.getPosts()));
                         array[i].setFollowers((array[i].getFollowers() + influencer.getFollowers()));
                         array[i].setComments((array[i].getComments() + influencer.getComments()));
-                        array[i].setViews((array[i].getViews() + influencer.getViews()));       
+                        array[i].setViews((array[i].getViews() + influencer.getViews())); 
+                        if (month.equals("February")) 
+                        {
+                            array[i].setFebFollowers(influencer.getFollowers());
+                            array[i].setFebLikes(influencer.getLikes());
+                            array[i].setFebComments(influencer.getComments());
+                            array[i].setFebViews(influencer.getViews());
+                        } 
+                        if (month.equals("March")) 
+                        {
+                            array[i].setMarchFollowers(influencer.getFollowers());
+                            array[i].setMarchLikes(influencer.getLikes());
+                            array[i].setMarchComments(influencer.getComments());  
+                            array[i].setMarchViews(influencer.getViews());
+                        }  
+                  
                         if (month.equals("March"))
                         {
                             array[i].setFollowers(influencer.getFollowers());

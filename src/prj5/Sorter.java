@@ -93,7 +93,7 @@ public class Sorter {
             while (j >= 0 && arr[j].getTraditionalEngagementRate() > key
                 .getTraditionalEngagementRate()) {
                 arr[j + 1] = arr[j];
-                j = j - 1;
+                j = j - 1; 
             }
             arr[j + 1] = key;
         }

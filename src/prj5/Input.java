@@ -63,6 +63,7 @@ public class Input {
                 if (sortedAlphabet[i].getFollowers() == 0)
                 {
                     System.out.println("traditional: N/A");
+                    
                 }
                 else
                 {
@@ -100,6 +101,7 @@ public class Input {
                 if (sortedAlphabet[i].getJanFollowers() == 0)
                 {
                     System.out.println("traditional: N/A");
+                    
                 }
                 else
                 {
@@ -116,7 +118,7 @@ public class Input {
                 System.out.println(sortedEngagement[i].getChannelName());
                 if (sortedEngagement[i].getJanViews() == 0)
                 {
-                    System.out.println("reach: N/A");
+                    System.out.println("reach: N/A");                   
                 }
                 else 
                 {
@@ -154,6 +156,7 @@ public class Input {
                 if (sortedEngagement[i].getFebViews() == 0)
                 {
                     System.out.println("reach: N/A");
+                    
                 }
                 else 
                 {
@@ -177,6 +180,7 @@ public class Input {
                 if (sortedAlphabet[i].getMarchFollowers() == 0)
                 {
                     System.out.println("traditional: N/A");
+                    System.out.println("text");
                 }
                 else
                 {
