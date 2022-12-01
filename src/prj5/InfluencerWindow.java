@@ -1,7 +1,9 @@
 package prj5;
 
+import java.awt.Rectangle;
 import cs2.Button;
 import cs2.Shape;
+import cs2.SquareShape;
 import cs2.Window;
 import cs2.WindowSide;
 
@@ -22,6 +24,10 @@ public class InfluencerWindow
     private Shape two;
     private Shape three;
     private Shape four;
+    private double height;
+    private String period;
+    private String sortMethod;
+    private String engageType; 
     
     /**
      * Constructor
@@ -29,10 +35,13 @@ public class InfluencerWindow
      *                list of influencers
      */
     public InfluencerWindow(LinkedList mainList)
-    {
+    {      
         this.list = mainList;
+        this.period = "";
+        this.sortMethod = "";
+        this.engageType = "";
         window = new Window("Social Media Visual"); 
-        Button quitButton = new Button("Quit");
+        quitButton = new Button("Quit");
         quitButton.onClick(this,"clickedQuit");     
         
         janButton = new Button("January");
@@ -66,6 +75,8 @@ public class InfluencerWindow
         window.addButton(tradEngButton, WindowSide.WEST);
         window.addButton(reachEngButton, WindowSide.WEST);
         
+        window.addShape(one);
+        
     }
   
     /**
@@ -92,7 +103,9 @@ public class InfluencerWindow
      */
     public void clickedJanuary(Button button)
     {
-        
+        period = "January";
+        one = new Shape(10, 100, 25, (int)Math.round(updateHeights(list)[0]));
+        window.addShape(one);
     }
     
     /**
@@ -100,8 +113,10 @@ public class InfluencerWindow
      * @param button
      *              new February button
      */
-    public void clickedFebruary(Button button) {
-        
+    public void clickedFebruary(Button button) 
+    {
+        period = "February";
+        updateHeights(list);
     }
     
     /**
@@ -109,8 +124,10 @@ public class InfluencerWindow
      * @param button
      *              new March button
      */
-    public void clickedMarch(Button button) {
-        
+    public void clickedMarch(Button button) 
+    {
+        period = "March";
+        updateHeights(list);
     }
     
     /**
@@ -120,7 +137,8 @@ public class InfluencerWindow
      */
     public void clickedfirstQButton(Button button) 
     {
-        
+        period = "FirstQuarter";
+        updateHeights(list);
     }
     /**
      * creates a first quarter button
@@ -129,7 +147,8 @@ public class InfluencerWindow
      */
     public void clickedTradEngButton(Button button) 
     {
-        
+        engageType = "Traditional";
+        updateHeights(list);
     }
     /**
      * creates a first quarter button
@@ -138,7 +157,8 @@ public class InfluencerWindow
      */
     public void clickedReachEngButton(Button button) 
     {
-        
+        engageType = "Reach";
+        updateHeights(list);
     }
     /**
      * creates a first quarter button
@@ -147,7 +167,8 @@ public class InfluencerWindow
      */
     public void clickedSortChanButton(Button button) 
     {
-        
+        sortMethod = "Channel";
+        updateHeights(list);
     }
     /**
      * creates a first quarter button
@@ -156,20 +177,133 @@ public class InfluencerWindow
      */
     public void clickedSortEngButton(Button button) 
     {
-        
+        sortMethod = "Engagement";
+        updateHeights(list);
     }
+
     /**
-     * block size
+     * updates the heights of the bars 
+     * @param list
+     * @return
      */
-    public void getBarSize(Influencer influencer)
+    public Double[] updateHeights(LinkedList list)
     {
-        if (influencer != null)
-        {
-           
-        }
+        Double[] heights = new Double[4];
+        Sorter sorter = new Sorter();
+       
+        if (list != null)
+          {
+              if (period.equals("January"))
+              {
+                  if (sortMethod.equals("Channel") && engageType.equals("Traditional"))
+                  {
+                      Influencer[] janChannelTrad = sorter.sortByChannelName(list);
+                      for (int i = 0; i < janChannelTrad.length; i++)
+                      {
+                          heights[i] = (janChannelTrad[i].getJanTradEngagementRate()) * 10;
+                      }
+                  }
+                  else if (sortMethod.equals("Channel") && engageType.equals("Reach"))
+                  {
+                      Influencer[] janChannelReach = sorter.sortByChannelName(list);
+                      for (int i = 0; i < janChannelReach.length; i++)
+                      {
+                          heights[i] = (janChannelReach[i].getJanReachEngagementRate()) * 10;
+                      }
+                  }
+                  else if (sortMethod.equals("Engagement") && engageType.equals("Traditional"))
+                  {
+                      Influencer[] janEngTrad = sorter.sortByTraditionalEngagementRate(list);
+                      for (int i = 0; i < janEngTrad.length; i++)
+                      {
+                          heights[i] = (janEngTrad[i].getJanTradEngagementRate()) * 10;
+                      }
+                  }
+                  else if (sortMethod.equals("Engagement") && engageType.equals("Reach"))
+                  {
+                      Influencer[] janEngReach = sorter.sortByReachEngagementRate(list);
+                      for (int i = 0; i < janEngReach.length; i++)
+                      {
+                          heights[i] = (janEngReach[i].getJanReachEngagementRate()) * 10;
+                      }
+                  }
+              }
+              
+              if (period.equals("February"))
+              {
+                  if (sortMethod.equals("Channel") && engageType.equals("Traditional"))
+                  {
+                      Influencer[] febChannelTrad = sorter.sortByChannelName(list);
+                      for (int i = 0; i < febChannelTrad.length; i++)
+                      {
+                          heights[i] = (febChannelTrad[i].getFebTradEngagementRate()) * 10;
+                      }
+                  }
+                  else if (sortMethod.equals("Channel") && engageType.equals("Reach"))
+                  {
+                      Influencer[] febChannelReach = sorter.sortByChannelName(list);
+                      for (int i = 0; i < febChannelReach.length; i++)
+                      {
+                          heights[i] = (febChannelReach[i].getFebReachEngagementRate()) * 10;
+                      }
+                  }
+                  else if (sortMethod.equals("Engagement") && engageType.equals("Traditional"))
+                  {
+                      Influencer[] febEngTrad = sorter.sortByTraditionalEngagementRate(list);
+                      for (int i = 0; i < febEngTrad.length; i++)
+                      {
+                          heights[i] = (febEngTrad[i].getFebTradEngagementRate()) * 10;
+                      }
+                  }
+                  else if (sortMethod.equals("Engagement") && engageType.equals("Reach"))
+                  {
+                      Influencer[] febEngReach = sorter.sortByReachEngagementRate(list);
+                      for (int i = 0; i < febEngReach.length; i++)
+                      {
+                          heights[i] = (febEngReach[i].getFebReachEngagementRate()) * 10;
+                      }
+                  }
+              }
+              
+              if (period.equals("March"))
+              {
+                  if (sortMethod.equals("Channel") && engageType.equals("Traditional"))
+                  {
+                      Influencer[] marChannelTrad = sorter.sortByChannelName(list);
+                      for (int i = 0; i < marChannelTrad.length; i++)
+                      {
+                          heights[i] = (marChannelTrad[i].getMarchTradEngagementRate()) * 10;
+                      }
+                  }
+                  else if (sortMethod.equals("Channel") && engageType.equals("Reach"))
+                  {
+                      Influencer[] marChannelReach = sorter.sortByChannelName(list);
+                      for (int i = 0; i < marChannelReach.length; i++)
+                      {
+                          heights[i] = (marChannelReach[i].getMarchReachEngagementRate()) * 10;
+                      }
+                  }
+                  else if (sortMethod.equals("Engagement") && engageType.equals("Traditional"))
+                  {
+                      Influencer[] marEngTrad = sorter.sortByTraditionalEngagementRate(list);
+                      for (int i = 0; i < marEngTrad.length; i++)
+                      {
+                          heights[i] = (marEngTrad[i].getMarchTradEngagementRate()) * 10;
+                      }
+                  }
+                  else if (sortMethod.equals("Engagement") && engageType.equals("Reach"))
+                  {
+                      Influencer[] marEngReach = sorter.sortByReachEngagementRate(list);
+                      for (int i = 0; i < marEngReach.length; i++)
+                      {
+                          heights[i] = (marEngReach[i].getMarchReachEngagementRate()) * 10;
+                      }
+                  }
+              }
+          }
+        return heights;
     }
-    
-    
+   
     
     
 }
