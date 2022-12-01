@@ -28,27 +28,6 @@ public class Input {
         
         LinkedList list = handler.readFile(inputFile); 
         new InfluencerWindow(list);
-      //  LinkedList sorted = sorter.sortChannels(list);
-//        Influencer[] influencers = list.toArray();
-//        LinkedList JanuaryData = new LinkedList();
-//        LinkedList FebruaryData = new LinkedList();
-//        LinkedList MarchData = new LinkedList();
-//        
-//        for (int i = 0; i < influencers.length; i++)
-//        {
-//            if (influencers[i].getMonth().equals("January"))
-//            {
-//                JanuaryData.add(influencers[i]);
-//            }
-//            if (influencers[i].getMonth().equals("February"))
-//            {
-//                FebruaryData.add(influencers[i]);
-//            }
-//            if (influencers[i].getMonth().equals("March"))
-//            {
-//                MarchData.add(influencers[i]);
-//            }
-//        }
          
        
         Influencer[] sortedAlphabet = sorter.sortByChannelName(list);

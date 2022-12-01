@@ -44,8 +44,8 @@ public class InfluencerWindow
         marchButton = new Button("March");
         marchButton.onClick(this, "clickedMarch");
         
-        firstQButton = new Button("First Quarter (Jan - March");
-        firstQButton.onClick(this, "clickedFirstQButton");        
+        firstQButton = new Button("First Quarter (Jan - March)");
+        firstQButton.onClick(this, "clickedfirstQButton");        
         
         tradEngButton = new Button("Traditional Engagement Rate");
         tradEngButton.onClick(this, "clickedTradEngButton");
@@ -118,10 +118,56 @@ public class InfluencerWindow
      * @param button
      *              new first quarter button
      */
-    public void clickedFirstQuarter(Button button) {
+    public void clickedfirstQButton(Button button) 
+    {
         
     }
-    
+    /**
+     * creates a first quarter button
+     * @param button
+     *              new first quarter button
+     */
+    public void clickedTradEngButton(Button button) 
+    {
+        
+    }
+    /**
+     * creates a first quarter button
+     * @param button
+     *              new first quarter button
+     */
+    public void clickedReachEngButton(Button button) 
+    {
+        
+    }
+    /**
+     * creates a first quarter button
+     * @param button
+     *              new first quarter button
+     */
+    public void clickedSortChanButton(Button button) 
+    {
+        
+    }
+    /**
+     * creates a first quarter button
+     * @param button
+     *              new first quarter button
+     */
+    public void clickedSortEngButton(Button button) 
+    {
+        
+    }
+    /**
+     * block size
+     */
+    public void getBarSize(Influencer influencer)
+    {
+        if (influencer != null)
+        {
+           
+        }
+    }
     
     
     

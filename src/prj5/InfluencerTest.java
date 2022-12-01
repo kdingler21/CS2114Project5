@@ -7,7 +7,7 @@ import student.TestCase;
  * 
  * @author katiedingler
  * @version 11/19/22
- */
+ */ 
 public class InfluencerTest extends TestCase {
     private Influencer influencer;
     private Influencer influencer2;
