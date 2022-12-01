@@ -60,7 +60,7 @@ public class SorterTest extends TestCase {
             influencer4);
         assertEquals(sorter.sortByTraditionalEngagementRate(list)[3],
             influencer);
-    }
+    } 
 
 
     /**

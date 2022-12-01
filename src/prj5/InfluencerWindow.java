@@ -33,9 +33,7 @@ public class InfluencerWindow
         this.list = mainList;
         window = new Window("Social Media Visual"); 
         Button quitButton = new Button("Quit");
-        quitButton.onClick(this,"clickedQuit");
-        window.addButton(quitButton,WindowSide.EAST);
-        
+        quitButton.onClick(this,"clickedQuit");     
         
         janButton = new Button("January");
         janButton.onClick(this, "clickedJanuary");
@@ -47,20 +45,26 @@ public class InfluencerWindow
         marchButton.onClick(this, "clickedMarch");
         
         firstQButton = new Button("First Quarter (Jan - March");
-        firstQButton.onClick(this, "clickedFirstQButton");
+        firstQButton.onClick(this, "clickedFirstQButton");        
+        
+        tradEngButton = new Button("Traditional Engagement Rate");
+        tradEngButton.onClick(this, "clickedTradEngButton");
+        reachEngButton = new Button("Reach Engagement Rate");
+        reachEngButton.onClick(this, "clickedReachEngButton");
+        sortChanButton = new Button("Sort by Channel Name");
+        sortChanButton.onClick(this, "clickedSortChanButton");
+        sortEngButton = new Button("Sort by Engagement Rate");
+        sortEngButton.onClick(this, "clickedSortEngButton");
         
         window.addButton(janButton, WindowSide.SOUTH);
         window.addButton(febButton, WindowSide.SOUTH);
         window.addButton(marchButton, WindowSide.SOUTH);
         window.addButton(firstQButton, WindowSide.SOUTH);
-        
-        
-        tradEngButton = new Button("Traditional Engagement Rate");
-        reachEngButton = new Button("Reach Engagement Rate");
-        sortChanButton = new Button("Sort by Channel Name");
-        sortEngButton = new Button("Sort by Engagement Rate");
-        
-        
+        window.addButton(sortChanButton, WindowSide.NORTH);
+        window.addButton(sortEngButton, WindowSide.NORTH);
+        window.addButton(quitButton,WindowSide.NORTH);
+        window.addButton(tradEngButton, WindowSide.WEST);
+        window.addButton(reachEngButton, WindowSide.WEST);
         
     }
   
