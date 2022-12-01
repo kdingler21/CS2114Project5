@@ -16,19 +16,19 @@ public class InfluencerTest extends TestCase {
      * sets up test case
      */
     public void setUp() {
-        influencer = new Influencer("jan", "john", "john123", "US", "sports",
+        influencer = new Influencer("January", "john", "john123", "US", "sports",
             10, 10, 10, 10, 20);
-        influencer2 = new Influencer("feb", "mike", "mike1", "US", "sports", 5,
+        influencer2 = new Influencer("February", "mike", "mike1", "US", "sports", 5,
             5, 5, 5, 4);
     }
 
 
     /**
      * tests all the getters
-     */
+     */ 
     public void testGetters() {
         assertTrue(influencer.getUserName().equals("john"));
-        assertTrue(influencer.getMonth().equals("jan"));
+        assertTrue(influencer.getMonth().equals("January"));
         assertTrue(influencer.getChannelName().equals("john123"));
         assertTrue(influencer.getCountry().equals("US"));
         assertTrue(influencer.getTopic().equals("sports"));
@@ -48,4 +48,5 @@ public class InfluencerTest extends TestCase {
         assertEquals(influencer.getTraditionalEngagementRate(), 200, .01);
         assertEquals(influencer.getReachEngagementRate(), 100, .01);
     }
+    
 }
