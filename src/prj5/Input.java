@@ -26,7 +26,8 @@ public class Input {
         FileHandler handler = new FileHandler();
         Sorter sorter = new Sorter();
         
-        LinkedList list = handler.readFile(inputFile);      
+        LinkedList list = handler.readFile(inputFile); 
+        new InfluencerWindow(list);
       //  LinkedList sorted = sorter.sortChannels(list);
 //        Influencer[] influencers = list.toArray();
 //        LinkedList JanuaryData = new LinkedList();
@@ -207,6 +208,7 @@ public class Input {
                 System.out.println("==========");
             }
         } 
+        
         
     }
 }
