@@ -48,10 +48,12 @@ public class Sorter {
      * 
      * @param list
      *            list to be sorted
+     * @param timeframe
+     *            timeframe to get engagement rate
      * @return arr
      *         sorted list as an array
      */
-    public Influencer[] sortByTraditionalEngagementRate(LinkedList list) {
+    public Influencer[] sortByTraditionalEngagementRate(LinkedList list, String timeframe) {
         Influencer[] arr = list.toArray();
         int size = arr.length;
 
@@ -59,10 +61,38 @@ public class Sorter {
             Influencer key = arr[i];
             int j = i - 1;
 
-            while (j >= 0 && arr[j].getTraditionalEngagementRate() > key
-                .getTraditionalEngagementRate()) {
-                arr[j + 1] = arr[j];
-                j = j - 1; 
+            switch (timeframe) {
+                case "Jan":
+                    while (j >= 0 && arr[j].getJanTradEngagementRate() > key
+                        .getJanTradEngagementRate()) {
+                        arr[j + 1] = arr[j];
+                        j = j - 1; 
+                    }
+                break;
+                
+                case "Feb":
+                    while (j >= 0 && arr[j].getFebTradEngagementRate() > key
+                        .getFebTradEngagementRate()) {
+                        arr[j + 1] = arr[j];
+                        j = j - 1; 
+                    }
+                break;
+                
+                case "March":
+                    while (j >= 0 && arr[j].getMarchTradEngagementRate() > key
+                        .getMarchTradEngagementRate()) {
+                        arr[j + 1] = arr[j];
+                        j = j - 1; 
+                    }
+                break;
+                
+                case "All":
+                    while (j >= 0 && arr[j].getTraditionalEngagementRate() > key
+                        .getTraditionalEngagementRate()) {
+                        arr[j + 1] = arr[j];
+                        j = j - 1; 
+                    }
+                break;
             }
             arr[j + 1] = key;
         }
@@ -72,14 +102,16 @@ public class Sorter {
 
 
     /**
-     * sorts list by reach engagement rate
+     * sorts list by reach engagement rate and timefrane
      * 
      * @param list
      *            list to be sorted
+     * @param timeframe
+     *            timeframe to get engagement rate
      * @return arr
      *         sorted list as an array
      */
-    public Influencer[] sortByReachEngagementRate(LinkedList list) {
+    public Influencer[] sortByReachEngagementRate(LinkedList list, String timeframe) {
         Influencer[] arr = list.toArray();
         int size = arr.length;
 
@@ -87,10 +119,38 @@ public class Sorter {
             Influencer key = arr[i];
             int j = i - 1;
 
-            while (j >= 0 && arr[j].getReachEngagementRate() < key
-                .getReachEngagementRate()) {
-                arr[j + 1] = arr[j];
-                j = j - 1;
+            switch (timeframe) {
+                case "Jan":
+                    while (j >= 0 && arr[j].getJanReachEngagementRate() > key
+                        .getJanReachEngagementRate()) {
+                        arr[j + 1] = arr[j];
+                        j = j - 1; 
+                    }
+                break;
+                
+                case "Feb":
+                    while (j >= 0 && arr[j].getFebReachEngagementRate() > key
+                        .getFebReachEngagementRate()) {
+                        arr[j + 1] = arr[j];
+                        j = j - 1; 
+                    }
+                break;
+                
+                case "March":
+                    while (j >= 0 && arr[j].getMarchReachEngagementRate() > key
+                        .getMarchReachEngagementRate()) {
+                        arr[j + 1] = arr[j];
+                        j = j - 1; 
+                    }
+                break;
+                
+                case "All":
+                    while (j >= 0 && arr[j].getReachEngagementRate() > key
+                        .getReachEngagementRate()) {
+                        arr[j + 1] = arr[j];
+                        j = j - 1; 
+                    }
+                break;
             }
             arr[j + 1] = key;
         }

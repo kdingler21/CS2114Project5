@@ -52,13 +52,13 @@ public class SorterTest extends TestCase {
      * tests sortByTraditionalEngagmentRate
      */
     public void testSortByTraditionalEngagementRate() {
-        assertEquals(sorter.sortByTraditionalEngagementRate(list)[0],
+        assertEquals(sorter.sortByTraditionalEngagementRate(list, "All")[0],
             influencer3);
-        assertEquals(sorter.sortByTraditionalEngagementRate(list)[1],
+        assertEquals(sorter.sortByTraditionalEngagementRate(list, "All")[1],
             influencer2);
-        assertEquals(sorter.sortByTraditionalEngagementRate(list)[2],
+        assertEquals(sorter.sortByTraditionalEngagementRate(list, "All")[2],
             influencer4);
-        assertEquals(sorter.sortByTraditionalEngagementRate(list)[3],
+        assertEquals(sorter.sortByTraditionalEngagementRate(list, "All")[3],
             influencer);
     } 
 
@@ -67,10 +67,10 @@ public class SorterTest extends TestCase {
      * checking if sort by reach works correctly
      */
     public void testSortByReachEngagementRate() {
-        assertEquals(sorter.sortByReachEngagementRate(list)[3], influencer);
-        assertEquals(sorter.sortByReachEngagementRate(list)[2], influencer4);
-        assertEquals(sorter.sortByReachEngagementRate(list)[1], influencer2);
-        assertEquals(sorter.sortByReachEngagementRate(list)[0], influencer3);
+        assertEquals(sorter.sortByReachEngagementRate(list, "All")[3], influencer);
+        assertEquals(sorter.sortByReachEngagementRate(list, "All")[2], influencer4);
+        assertEquals(sorter.sortByReachEngagementRate(list, "All")[1], influencer2);
+        assertEquals(sorter.sortByReachEngagementRate(list, "All")[0], influencer3);
     }
 
 
