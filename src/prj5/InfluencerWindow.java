@@ -23,7 +23,11 @@ public class InfluencerWindow
     private Shape three;
     private Shape four;
     
-    
+    /**
+     * Constructor
+     * @param mainList
+     *                list of influencers
+     */
     public InfluencerWindow(LinkedList mainList)
     {
         this.list = mainList;
@@ -32,7 +36,32 @@ public class InfluencerWindow
         quitButton.onClick(this,"clickedQuit");
         window.addButton(quitButton,WindowSide.EAST);
         
-        list = mainList;
+        
+        janButton = new Button("January");
+        janButton.onClick(this, "clickedJanuary");
+        
+        febButton = new Button("February");
+        febButton.onClick(this, "clickedFebruary");
+        
+        marchButton = new Button("March");
+        marchButton.onClick(this, "clickedMarch");
+        
+        firstQButton = new Button("First Quarter (Jan - March");
+        firstQButton.onClick(this, "clickedFirstQButton");
+        
+        window.addButton(janButton, WindowSide.SOUTH);
+        window.addButton(febButton, WindowSide.SOUTH);
+        window.addButton(marchButton, WindowSide.SOUTH);
+        window.addButton(firstQButton, WindowSide.SOUTH);
+        
+        
+        tradEngButton = new Button("Traditional Engagement Rate");
+        reachEngButton = new Button("Reach Engagement Rate");
+        sortChanButton = new Button("Sort by Channel Name");
+        sortEngButton = new Button("Sort by Engagement Rate");
+        
+        
+        
     }
   
     /**
@@ -52,8 +81,45 @@ public class InfluencerWindow
         System.exit(0);
     }
     
-    public void clickedJanuaryButton(Button button)
+    /**
+     * creates a January button
+     * @param button 
+     *              new January button
+     */
+    public void clickedJanuary(Button button)
     {
         
     }
+    
+    /**
+     * creates a February button
+     * @param button
+     *              new February button
+     */
+    public void clickedFebruary(Button button) {
+        
+    }
+    
+    /**
+     * creates a March button
+     * @param button
+     *              new March button
+     */
+    public void clickedMarch(Button button) {
+        
+    }
+    
+    /**
+     * creates a first quarter button
+     * @param button
+     *              new first quarter button
+     */
+    public void clickedFirstQuarter(Button button) {
+        
+    }
+    
+    
+    
+    
+    
 }
