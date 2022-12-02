@@ -24,11 +24,18 @@ public class Input {
         }
 
         FileHandler handler = new FileHandler();
-        Sorter sorter = new Sorter();
-        
         LinkedList list = handler.readFile(inputFile); 
-        new InfluencerWindow(list);
-       
+        new InfluencerWindow(list); 
+    }
+    
+    /**
+     * Data Printing Method
+     * 
+     * @param list
+     *          LinkedList of influencer data to print
+     */
+    public static void printData(LinkedList list) {
+        Sorter sorter = new Sorter();
         Influencer[] sortedAlphabet = sorter.sortByChannelName(list);
         Influencer[] sortedEngagement = sorter.sortByReachEngagementRate(list, "All");
         
@@ -185,8 +192,6 @@ public class Input {
                 }
                 System.out.println("==========");
             }
-        } 
-        
-        
+        }
     }
 }
