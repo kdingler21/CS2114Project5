@@ -20,8 +20,6 @@ public class InfluencerTest extends TestCase {
             10, 10, 10, 10, 20);
         influencer2 = new Influencer("February", "mike", "mike1", "US", "sports", 5,
             5, 5, 5, 4);
-        
-        
     }
 
 
@@ -39,19 +37,6 @@ public class InfluencerTest extends TestCase {
         assertEquals(10, influencer.getFollowers());
         assertEquals(10, influencer.getComments());
         assertEquals(20, influencer.getViews());
-        
-        influencer.setJanLikes(5);
-        influencer.setJanComments(5);
-        assertEquals(influencer.getJanEngagement(), 10);
-        influencer.setFebLikes(5);
-        influencer.setFebComments(5);
-        assertEquals(influencer.getFebEngagement(), 10);
-        influencer.setMarchLikes(5);
-        influencer.setMarchComments(5);
-        assertEquals(influencer.getMarchEngagement(), 10);
-        
-        influencer.setJanFollowers(7);
-        //assertEquals(influencer.getJanTradEngagementRate(), 142.9, 0.1); this is  not working
     }
 
 

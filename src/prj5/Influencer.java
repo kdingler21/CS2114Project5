@@ -1,5 +1,4 @@
 package prj5;
-import java.text.DecimalFormat;
 
 /**
  * Influencer class
@@ -32,8 +31,6 @@ public class Influencer {
     private int janViews;
     private int febViews;
     private int marchViews;
-    
-    DecimalFormat df = new DecimalFormat("#.#");
     
 
     /**
@@ -93,7 +90,7 @@ public class Influencer {
      * @return
      *         the total engagement
      */
-    public int getJanEngagement() {
+    public double getJanEngagement() {
         return (this.janComments + this.janLikes);
     }
     /**
@@ -102,7 +99,7 @@ public class Influencer {
      * @return
      *         the total engagement
      */
-    public int getFebEngagement() {
+    public double getFebEngagement() {
         return (this.febComments + this.febLikes);
     }
     /**
@@ -111,7 +108,7 @@ public class Influencer {
      * @return
      *         the total engagement
      */
-    public int getMarchEngagement() {
+    public double getMarchEngagement() {
         return (this.marchComments + this.marchLikes); 
     }
     /**
@@ -122,7 +119,8 @@ public class Influencer {
      */
     public double getJanTradEngagementRate() 
     {
-        return Double.parseDouble(df.format(((this.getJanEngagement() / this.getJanFollowers()) * 100)));  
+       
+        return ((this.getJanEngagement() / this.getJanFollowers()) * 100); 
     }
     /**
      * gets engagement rate using traditional formula
@@ -133,7 +131,7 @@ public class Influencer {
     public double getFebTradEngagementRate() 
     {
        
-        return ((this.getFebEngagement() / this.getFebFollowers()) * 100);  
+        return ((this.getFebEngagement() / this.getFebFollowers()) * 100); 
     }
     /**
      * gets engagement rate using traditional formula
