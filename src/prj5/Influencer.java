@@ -44,7 +44,7 @@ public class Influencer {
     }
 
 
-    /** 
+    /**
      * constructor sets next node to next influencer
      * 
      * @param next

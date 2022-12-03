@@ -20,11 +20,12 @@ public class Input {
         throws FileNotFoundException {
         String inputFile = "SampleInput1_2022.csv";
         if (args.length > 0) {
-            inputFile = args[0]; 
+            inputFile = args[0];
         }
 
         FileHandler handler = new FileHandler();
         LinkedList list = handler.readFile(inputFile); 
+        printData(list);
         new InfluencerWindow(list); 
     }
     
