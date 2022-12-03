@@ -195,6 +195,7 @@ public class InfluencerWindow {
      *            array of heights
      */
     public void updateBars(int heights[]) {
+        window.removeAllShapes();
         Shape bars[] = new Shape[heights.length];
         Color colors[] = randomizeColors(heights.length);
         
@@ -212,7 +213,7 @@ public class InfluencerWindow {
         }
         
         for (int i = 0; i < bars.length; i++) {           
-            bars[i] = new Shape(10, 100, 25, heights[i]);
+            bars[i] = new Shape(15 + (i * 75), 75, 35, heights[i]);
             bars[i].setBackgroundColor(colors[i]);
             window.addShape(bars[i]);
         }
