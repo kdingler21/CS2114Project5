@@ -20,7 +20,7 @@ public class Input {
         throws FileNotFoundException {
         String inputFile = "SampleInput1_2022.csv";
         if (args.length > 0) {
-            inputFile = args[0];
+            inputFile = args[0]; 
         }
 
         FileHandler handler = new FileHandler();
